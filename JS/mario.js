@@ -15,6 +15,8 @@ const loop = setInterval(() =>{
    const pipePositon = pipe.offsetLeft;
    
    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '' );
+
+  
    
 
    if(pipePositon <= 120 && pipePositon > 0 && marioPosition < 90){   
@@ -29,9 +31,18 @@ const loop = setInterval(() =>{
       mario.style.marginLeft = '50px'
 
       clearInterval(loop);
+
+      setTimeout(() =>{
+         alert("Game Over! Clique em 'OK' para reiniciar o jogo!" )
+      window.location.reload()
+      }, 500)
+      
+
    }
 }, 10)
 
 
-
 document.addEventListener('keydown', jump)
+
+
+
